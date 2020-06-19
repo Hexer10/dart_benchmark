@@ -1,17 +1,19 @@
-A library for Dart developers.
-
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+A simple benchmarking library for Dart.
 
 ## Usage
 
 A simple usage example:
 
 ```dart
-import 'package:dart_benchmark/dart_benchmark.dart';
+Future<void> main() async {
+  await DartBenchmark('Slow Benchmark', () {
+    return slowThingy();
+  }, count: 3, warmup: false)
+      .run(); // If you want to run synchronously use runSync.
+}
 
-main() {
-  var awesome = new Awesome();
+Future<void> slowThingy() async {
+  await Future.delayed(Duration(seconds: 1));
 }
 ```
 
@@ -19,4 +21,4 @@ main() {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/Hexer10/dart_benchmark/issues
