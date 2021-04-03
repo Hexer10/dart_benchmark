@@ -1,13 +1,13 @@
 name: dart_benchmark
 description: A simple benchmarking library for Dart.
-version: 1.0.0
+version: 2.0.0
 homepage: https://github.com/Hexer10/dart_benchmark
 
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  quick_log: ^0.4.1
+  quick_log: ^5.1.0
 
 dev_dependencies:
-  pedantic: ^1.9.0
+  lint: ^1.5.3

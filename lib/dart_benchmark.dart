@@ -4,7 +4,7 @@ import 'dart:collection';
 import 'package:quick_log/quick_log.dart';
 
 /// Benchmark callback definition.
-typedef benchmarkCallback = FutureOr<void> Function();
+typedef BenchmarkCallback = FutureOr<void> Function();
 
 /// Dart Benchmark
 class DartBenchmark {
@@ -12,13 +12,13 @@ class DartBenchmark {
   final Logger log;
 
   /// Function called before [execute], not counted in the result.
-  final benchmarkCallback setup;
+  final BenchmarkCallback? setup;
 
   /// Function called to be benchmarked.
-  final benchmarkCallback execute;
+  final BenchmarkCallback execute;
 
   /// Function called after [execute], not counted in the result.
-  final benchmarkCallback cleanup;
+  final BenchmarkCallback? cleanup;
 
   /// How many times [execute] is called.
   final int count;
